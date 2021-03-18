@@ -1,0 +1,24 @@
+server:
+  port: 8010
+spring:
+  application:
+    name: myshop-activiti
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/learn_activiti?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimeZone=GMT%2B8
+    username: root
+    password: 1234
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8006/eureka,http://localhost:8007/eureka
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
+
+#修改负载均衡 RoundRobinRule RandomRule RetryRule
+myshop-server:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+

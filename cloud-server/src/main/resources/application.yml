@@ -1,0 +1,21 @@
+server:
+  port: 28208
+spring:
+  application:
+    name: myshop-server
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/myshop?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimeZone=GMT%2B8
+    username: root
+    password: 1234
+
+mybatis:
+  type-aliases-package: com.laison.entity
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8006/eureka,http://localhost:8007/eureka
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1

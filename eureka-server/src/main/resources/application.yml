@@ -1,0 +1,20 @@
+server:
+  port: 8007
+spring:
+  application:
+    name: euraka-server
+
+eureka:
+  instance:
+    #最小的周期时长心跳
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8006/eureka
+    register-with-eureka: false
+  server:
+    #失效剔除
+    eviction-interval-timer-in-ms: 30000
+    #失效自我保护
+    enable-self-preservation: false
